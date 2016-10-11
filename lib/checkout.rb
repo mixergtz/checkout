@@ -10,6 +10,8 @@ class Checkout
   end
 
   def scan(product_code)
+    return if Product.find_by_product_code(product_code).nil?
+
     @scanned_products << product_code
   end
 
