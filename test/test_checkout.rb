@@ -16,14 +16,14 @@ describe Checkout do
       @co.scan('MUG')
       @co.scan('VOUCHER')
       @co.scan('TSHIRT')
-      @co.total.must_equal 32.5
+      @co.total.must_equal '32.50€'
     end
 
     it 'returns the right value for 2 VOUCHER and a TSHIRT' do
       @co.scan('VOUCHER')
       @co.scan('TSHIRT')
       @co.scan('VOUCHER')
-      @co.total.must_equal 25
+      @co.total.must_equal '25.00€'
     end
 
     it 'returns the right value for 4 TSHIRT and a VOUCHER' do
@@ -32,7 +32,7 @@ describe Checkout do
       @co.scan('TSHIRT')
       @co.scan('VOUCHER')
       @co.scan('TSHIRT')
-      @co.total.must_equal 81
+      @co.total.must_equal '81.00€'
     end
 
     it 'returns the right value for 3 TSHIRT, 3 VOUCHER and a MUG' do
@@ -43,7 +43,7 @@ describe Checkout do
       @co.scan('MUG')
       @co.scan('TSHIRT')
       @co.scan('TSHIRT')
-      @co.total.must_equal 74.5
+      @co.total.must_equal '74.50€'
     end
   end
 
@@ -56,14 +56,14 @@ describe Checkout do
       @co.scan('MUG')
       @co.scan('VOUCHER')
       @co.scan('TSHIRT')
-      @co.total.must_equal 32.5
+      @co.total.must_equal '32.50€'
     end
 
     it 'returns the right value for 2 VOUCHER and a TSHIRT' do
       @co.scan('VOUCHER')
       @co.scan('TSHIRT')
       @co.scan('VOUCHER')
-      @co.total.must_equal 30
+      @co.total.must_equal '30.00€'
     end
   end
 
@@ -77,14 +77,14 @@ describe Checkout do
       @co.scan('MUG')
       @co.scan('VOUCHER')
       @co.scan('TSHIRT')
-      @co.total.must_equal 32.5
+      @co.total.must_equal '32.50€'
     end
 
     it 'returns the right value for 2 VOUCHER and a TSHIRT' do
       @co.scan('VOUCHER')
       @co.scan('TSHIRT')
       @co.scan('VOUCHER')
-      @co.total.must_equal 25
+      @co.total.must_equal '25.00€'
     end
   end
 
@@ -95,7 +95,7 @@ describe Checkout do
       co.scan('MUG')
       co.scan('VOUCHER')
       co.scan('TSHIRT')
-      co.total.must_equal 32.5
+      co.total.must_equal '32.50€'
     end
   end
 
@@ -105,7 +105,7 @@ describe Checkout do
       co.scan('MUG')
       co.scan('JEAN')
       co.scan('TSHIRT')
-      co.total.must_equal 27.5
+      co.total.must_equal '27.50€'
     end
   end
 
@@ -117,7 +117,7 @@ describe Checkout do
       @co.scan('TSHIRT')
       @co.scan('TSHIRT')
       @co.scan('TSHIRT')
-      @co.total.must_equal 80
+      @co.total.must_equal '80.00€'
     end
   end
 end

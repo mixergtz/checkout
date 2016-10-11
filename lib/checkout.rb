@@ -3,6 +3,9 @@ require_relative 'pricing_rule'
 require_relative 'cashier'
 # Main file - It takes a set of pricing rules and applies them
 # to a set of scanned products to get the total price
+# Assumptions:
+# 1. The products and rules are stored somewhere (in this case hardcoded)
+# 2. Only one rule can be applied to a product at a time
 class Checkout
   # Example of the expected param
   # pricing_rules = [
@@ -24,6 +27,7 @@ class Checkout
 
   def total
     cashier = Cashier.new(@scanned_products, @rules)
-    cashier.calculate_total
+    # Short way to get 2 decimals and hard code the currency
+    format('%.2f€', cashier.calculate_total)
   end
 end
