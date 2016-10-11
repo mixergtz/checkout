@@ -10,7 +10,7 @@ class PricingRule
 
   def initialize(applicable_rule, product_qty)
     @selected_rule = PRICING_RULES.find { |pr| pr[:rule_code] == applicable_rule[:rule_code] }
-    @rule_options = applicable_rule[:rule_options]
+    @rule_options = applicable_rule[:rule_options] || {}
 
     @product = Product.find_by_product_code(applicable_rule[:product_code])
     @product_qty = product_qty
